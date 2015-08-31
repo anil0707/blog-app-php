@@ -1,5 +1,9 @@
 {% extends '::base.twig.html' %}
 
+{% block stylesheets %}
+    <link href="{{ asset('/assets/css/table.css') }}" rel="stylesheet">
+{% endblock %}
+
 {% block header -%}
     <div class="site-heading">
         <h1>Blog App</h1>
@@ -9,25 +13,33 @@
 
 {% block body -%}
     {% if posts %}
+    <table>
+        <tr>
+            <th>S. No.</th>
+            <th>Title</th>
+            <th>Active</th>
+            <th>Actions</th>
+        </tr>
+    
     {% for post in posts %}
-        <div class="post-preview">
-            <a href="{{ path('view_post', { 'id': post.id }) }}">
-                <h2 class="post-title">
-                    {{ post.title }}
-                </h2>
-            </a>
-            <p class="post-meta">Posted by <a href="#">{{ post.getUser().getFirstName() ~' '~ post.getUser().getLastName()}}</a> on {{ post.getCreatedOn() | date("F d, Y") }}</p>
-        </div>
-        
-        <div>
-            <a href="{{ path('edit_post', { 'id': post.id }) }}">edit</a>
-            <a href="{{ path('delete_post', { 'id': post.id }) }}">delete</a>
-        </div>
+        <tr>
+            <td>{{loop.index}}</td>
+            <td><a href="{{ path('view_post', { 'id': post.id }) }}">{{ post.title }}</a></td>
+            <td>{{ post.isActive?'Yes':'No' }}</td>
+            <td>
+                <a href="{{ path('edit_post', { 'id': post.id }) }}">edit</a>
+                <a href="{{ path('delete_post', { 'id': post.id }) }}">delete</a>
+            </td>
+        </tr>
         
     {% endfor %}
+    </table> 
     {% else %}
         <h3 class="post-subtitle">
             No Blog entries
         </h3>
     {% endif %}
+
+    <button onclick="location.href='{{ path('add_post')}}'">Create New Post</button>
+
 {% endblock %}
