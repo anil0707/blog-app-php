@@ -3,20 +3,24 @@ Developed app using
 Language: PHP 5.5.9
 Framework: Symfony 2.7
 Database: Mysql
+Doctrine: version 2.2.3
 
-1) Install symfony - refer this link to install
+Steps for installation:
 
-http://symfony.com/doc/current/book/installation.html
+1) git clone https://github.com/CuelogicTech/simple-blog.git
 
-2) Clone the repository
+2) Install symfony - refer this link to install
 
-https://github.com/CuelogicTech/simple-blog.git
+	http://symfony.com/doc/current/book/installation.html
 
 3) Running the Symfony Application
 
-cd my_project_name/
-php app/console server:run
+	cd simple-blog/
+	php app/console server:run
 
 4) Load sample data using data fixtures
 
-php app/console doctrine:fixtures:load
+	php app/console doctrine:fixtures:load
+
+
+Note: Get login credentials from data fixtures LoadUserData.php file.
