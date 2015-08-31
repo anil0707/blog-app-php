@@ -22,6 +22,10 @@ delete_post:
     path: /manage/post/delete/{id}
     defaults: { _controller: "AppBundle:ManagePost:delete"}
 
+add_comment:
+    path: /comment/add/{postId}
+    defaults: { _controller: "AppBundle:Homepage:addComment"}
+
 logout:
     pattern: /logout
     requirements:

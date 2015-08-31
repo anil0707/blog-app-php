@@ -12,4 +12,11 @@ use Doctrine\ORM\EntityRepository;
  */
 class CommentRepository extends EntityRepository
 {
+	public function findAllCommentsByPostId($postId)
+    {
+        return $this->getEntityManager()
+            ->createQuery('SELECT c FROM AppBundle:Comment c where c.post = :postId')
+            ->setParameter('postId', $postId)
+            ->getResult();
+    }
 }

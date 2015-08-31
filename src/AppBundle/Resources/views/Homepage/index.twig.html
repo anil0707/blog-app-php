@@ -16,7 +16,7 @@
                     {{ post.title }}
                 </h2>
             </a>
-            <p class="post-meta">Posted by <a href="#">{{ post.getUser().getFirstName() ~' '~ post.getUser().getLastName()}}</a> on {{ post.getCreatedOn() | date("F d, Y") }}</p>
+            <p class="post-meta">Posted by {{ post.getUser().getFirstName() ~' '~ post.getUser().getLastName()}} on {{ post.getCreatedOn() | date("F d, Y") }}</p>
         </div>
     {% endfor %}
     {% else %}
