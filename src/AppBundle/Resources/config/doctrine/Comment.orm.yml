@@ -14,24 +14,24 @@ AppBundle\Entity\Comment:
         createdOn:
             type: datetime
     manyToOne:
-    post:
-        targetEntity: Post
-        cascade: {  }
-        mappedBy: null
-        inversedBy: null
-        joinColumns:
-        postId:
-            referencedColumnName: id
-        orphanRemoval: false
-    user:
-        targetEntity: User
-        cascade: {  }
-        mappedBy: null
-        inversedBy: null
-        joinColumns:
-        userId:
-            referencedColumnName: id
-        orphanRemoval: false
+        post:
+            targetEntity: Post
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+            postId:
+                referencedColumnName: id
+            orphanRemoval: false
+        user:
+            targetEntity: User
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+            userId:
+                referencedColumnName: id
+            orphanRemoval: false
     lifecycleCallbacks:
         prePersist:
             - beforePersist

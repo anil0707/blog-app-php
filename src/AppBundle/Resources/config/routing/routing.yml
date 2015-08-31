@@ -1,0 +1,12 @@
+homepage:
+    path: /
+    defaults: { _controller: "AppBundle:Homepage:index"}
+
+view_post:
+    path: /post/{id}
+    defaults: { _controller: "AppBundle:Homepage:viewPost"}
+
+logout:
+    pattern: /logout
+    requirements:
+      _scheme:  http

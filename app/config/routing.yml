@@ -1,8 +1,2 @@
 app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
-
-logout:
-    pattern: /logout
-    requirements:
-      _scheme:  http
+    resource: "@AppBundle/Resources/config/routing/routing.yml"

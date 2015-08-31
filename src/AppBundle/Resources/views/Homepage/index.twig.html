@@ -1,0 +1,28 @@
+{% extends '::base.twig.html' %}
+
+{% block header -%}
+    <div class="site-heading">
+        <h1>Blog App</h1>
+        <span class="subheading">A Simple Blog by Anil</span>
+    </div>
+{% endblock %}
+
+{% block body -%}
+    {% if posts %}
+    {% for post in posts %}
+        <div class="post-preview">
+            <a href="{{ path('view_post', { 'id': post.id }) }}">
+                <h2 class="post-title">
+                    {{ post.title }}
+                </h2>
+            </a>
+            <p class="post-meta">Posted by <a href="#">{{ post.getUser().getFirstName() ~' '~ post.getUser().getLastName()}}</a> on {{ post.getCreatedOn() | date("F d, Y") }}</p>
+        </div>
+
+    {% endfor %}
+    {% else %}
+        <h3 class="post-subtitle">
+            No Blog entries
+        </h3>
+    {% endif %}
+{% endblock %}

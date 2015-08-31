@@ -20,17 +20,17 @@ AppBundle\Entity\Post:
         updatedOn:
             type: datetime
     manyToOne:
-    user:
-        targetEntity: User
-        cascade: {  }
-        mappedBy: null
-        inversedBy: null
-        joinColumns:
-        userId:
-            referencedColumnName: id
-        orphanRemoval: false        
+        user:
+            targetEntity: User
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+            userId:
+                referencedColumnName: id
+            orphanRemoval: false        
     lifecycleCallbacks:
-    prePersist:
-        - beforePersist
-    preUpdate:
-        - beforeUpdate
+        prePersist:
+            - beforePersist
+        preUpdate:
+            - beforeUpdate

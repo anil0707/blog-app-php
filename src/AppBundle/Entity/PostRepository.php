@@ -12,4 +12,18 @@ use Doctrine\ORM\EntityRepository;
  */
 class PostRepository extends EntityRepository
 {
+	public function fetchAllActivePosts()
+    {
+        return $this->getEntityManager()
+            ->createQuery('SELECT p FROM AppBundle:Post p WHERE p.isActive = 1 ORDER BY p.createdOn DESC')
+            ->getResult();
+    }
+
+    public function fetchActivePostById($id)
+    {
+        return $this->getEntityManager()
+            ->createQuery('SELECT p FROM AppBundle:Post p WHERE p.id = :id AND p.isActive = 1')
+            ->setParameter('id', $id)
+            ->getResult();
+    }
 }
