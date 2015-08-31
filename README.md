@@ -13,22 +13,21 @@ Steps for installation:
 
 	http://symfony.com/doc/current/book/installation.html
 
-3) Set permissions to cache & log
+3) Running the Symfony Application
+
+	cd simple-blog/
 
 	sudo chmod 777 app/cache -R
 	sudo chmod 777 app/logs -R
 
-4) Running the Symfony Application
-
-	cd simple-blog/
 	php app/console server:run
 
-5) Load sample data using data fixtures
+4) Load sample data using data fixtures
 
 	php app/console doctrine:fixtures:load
 
-6) URL to access app
+5) URL to access app
 
 	localhost:{portnumber}/app_dev.php/
 
-Note: Get login credentials from data fixtures LoadUserData.php file.
+Note: You can get login credentials from data fixtures in LoadUserData.php file.
