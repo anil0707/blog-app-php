@@ -18,6 +18,12 @@
             </a>
             <p class="post-meta">Posted by <a href="#">{{ post.getUser().getFirstName() ~' '~ post.getUser().getLastName()}}</a> on {{ post.getCreatedOn() | date("F d, Y") }}</p>
         </div>
+        
+        <div>
+            <a href="{{ path('edit_post', { 'id': post.id }) }}">edit</a>
+            <a href="{{ path('delete_post', { 'id': post.id }) }}">delete</a>
+        </div>
+        
     {% endfor %}
     {% else %}
         <h3 class="post-subtitle">

@@ -44,6 +44,7 @@
                         <li>
                             <a href="{{ path('homepage') }}">Home</a>
                         </li>
+                        <li><a href="{{ path('editor_post_list') }}" >Manage posts</a></li>
 
                         {% if is_granted('ROLE_EDITOR') %}
                             <li><a href="{{ path('logout') }}" >Logout</a></li>

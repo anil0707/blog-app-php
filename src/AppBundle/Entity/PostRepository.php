@@ -26,4 +26,19 @@ class PostRepository extends EntityRepository
             ->setParameter('id', $id)
             ->getResult();
     }
+
+    public function fetchPostById($id)
+    {
+        return $this->getEntityManager()
+            ->createQuery('SELECT p FROM AppBundle:Post p WHERE p.id = :id')
+            ->setParameter('id', $id)
+            ->getResult();
+    }
+
+    public function fetchAllPosts()
+    {
+        return $this->getEntityManager()
+            ->createQuery('SELECT p FROM AppBundle:Post p ORDER BY p.createdOn DESC')
+            ->getResult();
+    }
 }
