@@ -11,10 +11,10 @@
 
 #Technology Used
 
-Language: PHP 5.5.9
-Framework: Symfony 2.7
-Database: Mysql
-Doctrine: version 2.2.3
+	Language: PHP 5.5.9
+	Framework: Symfony 2.7
+	Database: Mysql
+	Doctrine: version 2.2.3
 
 Steps for installation:
 
