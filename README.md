@@ -10,9 +10,6 @@ Create a simple yet elegant blog in any technology stack of choice. In this repo
  - As an editor I want to be able to edit a blog post so I can correct typeo’s
  - As an editor I want to be able to publish, unpublish and delete a blog post in case I wrote something I am not allowed to write.
 
-# Deadline
-You have until 9 PM tonight. Provide the url to your repository so we can review your work. Commits after 9 PM will not be taken in to account.
-
 # Tips
  - See if you can be creative with your architecture even if you think it’s overkill.
  - Build the app in an unbreakable and maintainable manner.
