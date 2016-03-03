@@ -1,0 +1,36 @@
+AppBundle\Entity\Post:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Entity\PostRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: text
+        description:
+            type: text
+        isActive:
+            type: boolean
+        createdOn:
+            type: datetime
+        updatedOn:
+            type: datetime
+    manyToOne:
+        user:
+            targetEntity: User
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+            userId:
+                referencedColumnName: id
+            orphanRemoval: false        
+    lifecycleCallbacks:
+        prePersist:
+            - beforePersist
+        preUpdate:
+            - beforeUpdate

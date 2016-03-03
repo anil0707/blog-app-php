@@ -1,0 +1,37 @@
+AppBundle\Entity\Comment:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Entity\CommentRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        comment:
+            type: text
+        createdOn:
+            type: datetime
+    manyToOne:
+        post:
+            targetEntity: Post
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+            postId:
+                referencedColumnName: id
+            orphanRemoval: false
+        user:
+            targetEntity: User
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+            userId:
+                referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks:
+        prePersist:
+            - beforePersist

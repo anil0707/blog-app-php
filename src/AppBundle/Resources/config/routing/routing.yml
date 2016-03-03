@@ -1,0 +1,32 @@
+homepage:
+    path: /
+    defaults: { _controller: "AppBundle:Homepage:index"}
+
+view_post:
+    path: /post/{id}
+    defaults: { _controller: "AppBundle:Homepage:viewPost"}
+
+editor_post_list:
+    path: /manage/post/list
+    defaults: { _controller: "AppBundle:ManagePost:listPosts"}
+
+add_post:
+    path: /manage/post/add
+    defaults: { _controller: "AppBundle:ManagePost:add"}
+
+edit_post:
+    path: /manage/post/edit/{id}
+    defaults: { _controller: "AppBundle:ManagePost:edit"}
+
+delete_post:
+    path: /manage/post/delete/{id}
+    defaults: { _controller: "AppBundle:ManagePost:delete"}
+
+add_comment:
+    path: /comment/add/{postId}
+    defaults: { _controller: "AppBundle:Homepage:addComment"}
+
+logout:
+    pattern: /logout
+    requirements:
+      _scheme:  http

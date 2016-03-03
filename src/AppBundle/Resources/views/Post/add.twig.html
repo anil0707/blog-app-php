@@ -1,0 +1,21 @@
+{% extends '::base.twig.html' %}
+
+{% block header -%}
+    <div class="site-heading">
+        <h1>Blog App</h1>
+        <span class="subheading">A Simple Blog by Anil</span>
+    </div>
+{% endblock %}
+
+{% block body -%}
+    <h1>Add Post</h1>
+
+    {{ form(form) }}
+
+ 
+    <a href="{{ path('editor_post_list') }}">
+        Back to the posts
+    </a>
+
+{% endblock %}
+																																		

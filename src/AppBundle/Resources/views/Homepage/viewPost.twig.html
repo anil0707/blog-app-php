@@ -1,0 +1,30 @@
+{% extends '::base.twig.html' %}
+
+{% block header -%}
+    <div class="post-heading">
+        <h1>{{ post.title }}</h1>
+        <span class="meta">Posted by <a href="#">{{ post.getUser().getFirstname() ~' '~ post.getUser().getLastname()}}</a> on {{ post.getCreatedOn() | date("F d, Y") }}</span>
+    </div>
+{% endblock %} 
+
+{% block body -%}
+    <p>{{ post.description }}</p>
+    <h3 class="section-heading">Comments</h3>
+    
+    {% if comments %}
+        {% for comment in comments %}
+            <div>
+                <blockquote>{{ comment.getComment() }}</blockquote>
+            </div>
+            <span class="post-comment">By
+	                {% if comment.getUser() %}
+	                	{{ comment.getUser().getFirstName() ~' '~ post.getUser().getLastName()}} on {{ post.getCreatedOn() | date("F d, Y") }}
+	                {% else %}
+	                	guest
+	                {% endif %}
+            </span>
+        {% endfor %}
+    {% endif %}
+    
+    {{ form(form) }}
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends '::base.twig.html' %}
+
+{% block stylesheets %}
+    <link href="{{ asset('/assets/css/table.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block header -%}
+    <div class="site-heading">
+        <h1>Blog App</h1>
+        <span class="subheading">A Simple Blog by Anil</span>
+    </div>
+{% endblock %}
+
+{% block body -%}
+    {% if posts %}
+    <table>
+        <tr>
+            <th>S. No.</th>
+            <th>Title</th>
+            <th>Active</th>
+            <th>Actions</th>
+        </tr>
+    
+    {% for post in posts %}
+        <tr>
+            <td>{{loop.index}}</td>
+            <td><a href="{{ path('view_post', { 'id': post.id }) }}">{{ post.title }}</a></td>
+            <td>{{ post.isActive?'Yes':'No' }}</td>
+            <td>
+                <a href="{{ path('edit_post', { 'id': post.id }) }}">edit</a>
+                <a href="{{ path('delete_post', { 'id': post.id }) }}">delete</a>
+            </td>
+        </tr>
+        
+    {% endfor %}
+    </table> 
+    {% else %}
+        <h3 class="post-subtitle">
+            No Blog entries
+        </h3>
+    {% endif %}
+
+    <button onclick="location.href='{{ path('add_post')}}'">Add New Post</button>
+
+{% endblock %}
