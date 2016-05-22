@@ -18,7 +18,7 @@
 
 Steps for installation:
 
-1) git clone https://github.com/CuelogicTech/simple-blog.git
+1) git clone https://github.com/anil0707/blog-app-php.git
 
 2) Install symfony - refer this link to install
 
@@ -26,7 +26,7 @@ Steps for installation:
 
 3) Running the Symfony Application
 
-	cd simple-blog/
+	cd blog-app-php/
 
 	sudo chmod 777 app/cache -R
 	sudo chmod 777 app/logs -R
